@@ -1,0 +1,27 @@
+<hmtl>
+    <body>
+        <script>
+            let processos = [1,2,3,4,5]
+
+            let iteracaoAsync = async () => {
+
+                for(let processo of processos){
+    
+                    //processamentos assíncronos
+                    await new Promise((resolve, reject)=>{
+                        setTimeout(()=>{
+                            console.log('processamento assíncrono')
+                            resolve()
+                        }, 2000)
+                    })
+    
+                    console.log(processo)
+                }
+            }
+
+            iteracaoAsync()
+
+
+        </script>
+    </body>
+</hmtl>

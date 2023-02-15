@@ -1,0 +1,27 @@
+<html>
+    <body>
+        <script>
+            let objeto = {
+                nome: 'Milene',
+                profissional: {
+                    site: 'teste.net.br',
+                    profissao: 'programador'
+                },
+                hobbies: [
+                    {id:1, hobby: 'desenhar'},
+                    {id:2, hobby: 'ler'}
+                ],
+                pais: 'Brasil'
+            }
+
+            console.log(objeto)
+            //as infos do 'objeto' se torna um array sequencial
+            console.log(Object.values(objeto))
+            //cada info retorna um array dentro do array pai 'objeto'
+            //separa a chave do seu valor em índices diferentes
+            console.log(Object.entries(objeto))
+
+
+        </script>
+    </body>
+</html>

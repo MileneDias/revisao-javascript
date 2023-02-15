@@ -1,0 +1,69 @@
+<html>
+    <body>
+        <button id="btnSaudacao">Saudação</button>
+        <hr>
+        <input type="text" id="cep" placeholder="CEP">
+        <button id="btnCEP">Consultar CEP</button>
+
+
+    </body>
+
+    <script type="module">
+        /*
+        DYNEMIC IMPORT: importação de módulos apenas se forem ser usados, 
+        caso contrário, os módulos não farão parte do carregamento inicial
+        */
+        
+        //import {saudacao, getEnderecoByCEP} from './import/lib.mjs' //import estático, antes da necessidade de usar
+    
+        document.querySelector('#btnSaudacao').addEventListener('click', () =>{
+            import('./import/lib.mjs') //promise
+                .then(module => console.log(module.saudacao()))
+        })
+
+        document.querySelector('#btnCEP').addEventListener('click', () =>{
+            
+            let cep = document.querySelector('#cep').value
+
+            if(cep.length == 8){
+                import('./import/lib2.mjs') //promise - dynamic import
+                    .then(module => {  
+                        module.getEnderecoByCEP(cep)
+                        .then(dados => console.log(dados))
+                    })
+            }
+        })
+
+
+        /* EXEMPLO UTILIZANDO ASYNC-AWAIT
+        
+            document.querySelector('#btnSaudacao').addEventListener('click', async() =>{
+                const module = await import('./import/lib.mjs') 
+                console.log(module.saudacao)
+            })
+
+            __________________________
+
+            document.querySelector('#btnCEP').addEventListener('click', async() =>{
+            
+            let cep = document.querySelector('#cep').value
+
+            if(cep.length == 8){
+                let x = await import('./import/lib2.mjs')
+                    x.getEnderecoByCEP(cep)
+                        .then(dados => console.log(dados))
+            }
+        })
+        */
+
+        /*
+        console.log(saudacao())
+        getEnderecoByCEP(25520171)
+            .then(dados => console.log(dados))
+        */
+
+
+
+
+    </script>
+</html>

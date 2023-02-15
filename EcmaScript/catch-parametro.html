@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <script>
+            //Não é mais necessário usar parâmetros no catch
+
+            //ANTES
+            try{
+                throw 'Houve um erro'
+            } catch(e){
+                console.log(e)
+            }
+
+            //DEPOIS
+            try{
+                throw 'Houve um erro'
+            } catch{
+                console.log('Chegamos até aqui')
+            }
+        </script>
+    </body>
+</html>

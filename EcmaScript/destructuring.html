@@ -1,0 +1,99 @@
+<html>
+    <body>
+        <script>
+            //Destructuring assigment no contexto de:
+
+            //ARRAY
+            let frutas = ['abacaxi', 'uva', 'pera', 'mamão']
+            // let a = frutas[1]
+            // console.log(a)
+
+            // let [ a, b, c, d ] = frutas
+            // let [ a, b, , c ] = frutas
+            let [a, b, c, d, e = 'morango'] = frutas
+            console.log(a,b,c,d,e)
+            
+
+            let coisas = [
+                ['abacaxi', 'uva', 'pera', 'mamão'],
+                ['José', 'Maria']
+            ]
+
+            let [, [, x]] = coisas
+            console.log(x)
+
+            //OBJETO
+
+            let produto = {
+                descricao:'notebook',
+                preco: 2500,
+                detalhes:{
+                    fabricante: 'abc',
+                    modelo: 'xyz'
+                }
+            }
+
+            //let {descricao, preco} = produto
+            //console.log(descricao, preco)
+
+            //nomear variáveis com outros nomes
+            // let {descricao: des, preco: pre} = produto
+            // console.log(des,pre)
+
+            //valores default para lidar com atrigutos undefined
+            // let {descricao: des = 'Produto', preco: pre = 0, desconto: desc = 5} = produto
+            // console.log(des,pre, desc)
+
+            //extrair atributos de objetos pertencentes a atributos do objeto
+            //let {descricao, detalhes: {fabricante, modelo}} = produto
+            let {descricao, detalhes: {fabricante: f, modelo: m}} = produto
+
+            console.log(descricao, f, m = 'Não informado')
+
+
+            
+            //NO CONTEXTO DE ARRAY EM FUNÇÕES
+
+            let arr = [10,20,30,40]
+
+            // function teste(a,b){
+            //     console.log(a,b)
+            // }
+            //teste(arr[0], arr[1])
+
+            //function teste([a,b]){ //destructuring
+            //function teste([a,b, , c]){ //pular valores
+            function teste([a,b, , c, d = 100]){ //parâmetros default
+                console.log(a,b,c,d)
+            }
+
+            teste(arr)
+
+            //NO CONTEXTO DE OBJETO EM FUNÇÕES
+            let obj = {a:10, b:20, c:30, d:40}
+
+            //function teste2(a,b){
+            //function teste2({c,d: x}){ //apelidos
+            function teste2({c,d: x,t = 100}){ //parâmetro default   
+                console.log(c,x,t)
+            }
+            //teste2(obj.a,obj.b)
+            teste2(obj)
+
+
+            //DESTRUCTURING + REST
+
+            let arr2 = [10,20,30,40]
+            let [a1, ...x1] = arr2
+            console.log(a1,x1)
+
+
+            let obj2 = {a2:10, b2:20, c2:30, d2:40}
+            let {a2, c2: h, ...resto} = obj2
+            console.log(a2, h, resto)
+
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+    <body></body>
+    <script>
+
+        //orçamento pessoal
+        let obj ={
+            2021:{
+                janeiro: {
+                    pessoal: 2000,
+                    casa: 1500,
+                    investimento: 1000
+                },
+                fevereiro: {
+                    pessoal: 1800,
+                    casa: 1600,
+                    investimento: 800
+                }
+            }
+        }
+
+        //Verificação se o atributo existe, porem menos verboso
+        console.log(obj['2021'].marco?.pessoal)
+
+
+        /* Verificação se o atributo existe
+        if(console.log(obj['2021'].marco)){
+            console.log(obj['2021'].marco.pessoal)
+        }*/
+
+        //console.log(obj['2021'].janeiro.pessoal) // OK
+        //console.log(obj['2021'].fevereiro.pessoal) // OK
+        //console.log(obj['2021'].marco.pessoal) // X - undefined.pessoal - quebra aplicação
+
+        console.log('teste')
+
+
+
+
+    </script>
+</html>
