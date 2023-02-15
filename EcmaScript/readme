@@ -1,0 +1,17 @@
+=> INSTALAÇÃO:
+    Apps para instalar:
+        # Node.js (https://nodejs.org/en/)
+        # NPM (É instalado junto com o node.js)
+        # Angular cli (https://angular.io/cli)
+
+    Comandos para verificar versão:
+        # npm -v / node -v
+        # ng version
+
+    Comando para instalar o Angular/cli:
+        # npm install -g @angular/cli
+
+    Extenções no VScode:
+        # Live Server
+
+

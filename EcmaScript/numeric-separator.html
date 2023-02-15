@@ -1,0 +1,42 @@
+<html>
+  <body></body>
+  <script>
+    /*
+        Recurso para facilitar leitura de números dentro do
+        código.
+        Repare que a saída no console.log é igual para ambos os
+        casos.
+        O simbolo underline (_) é simplesmente descartado
+        quando estamos no contexto de valores numéricos quando
+        exibido no navegar ou por console.log.
+        */
+
+    //inteiro
+    let num1 = 1000000000000; //um trilhão
+    console.log("teste 1", num1);
+
+    num1 = 1_000_000_000_000;
+    console.log("teste 2", num1);
+
+    //decimal
+    let num2 = 1_575_720.25;
+    console.log(num2);
+
+    //binário
+    let b = 0b1010_1010_1010;
+    console.log(b);
+
+    //hexadecimal
+    let h = 0xa_b_c_d_e_f;
+    console.log(h);
+
+    //octal
+    let o = 0o2_3_3_5;
+    console.log(o);
+
+    //RESTRIÇÕES DE USO:
+    //let t1 = 1000___000 //não pode-se usar 2 ou mais _ seguidos
+    //let t2 = 0_5 //não pode-se iniciar com 0 e seguindo de _
+    //let t3 = 200_ //não se pode finalizar com _
+  </script>
+</html>

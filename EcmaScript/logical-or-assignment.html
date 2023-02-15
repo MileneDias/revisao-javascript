@@ -1,0 +1,24 @@
+<html>
+  <body></body>
+  <script>
+    //Verificar se variável é falsa, se sim, atribuir um valor
+    //false -> null, undefined, 0, ''
+
+    let v1 = 10;
+    let v2 = undefined; //false
+    let v3 = null; //false
+    let v4 = 0; //false
+    let v5 = ""; //false
+    let v6 = "teste";
+
+    //logical or assignment (||=)
+    v1 ||= 50;
+    v2 ||= 100;
+    v3 ||= 150;
+    v4 ||= 200;
+    v5 ||= 250;
+    v6 ||= 300;
+
+    console.log("v1", v1, "v2", v2, "v3", v3, "v4", v4, "v5", v5, "v6", v6);
+  </script>
+</html>

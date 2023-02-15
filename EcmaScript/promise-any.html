@@ -1,0 +1,37 @@
+<html>
+  <body></body>
+  <script>
+    /*
+        Any => considera o valor da promise que for resolvida
+        primeiro.
+        Neste caso, usamos o setTimeout para simular o
+        comportamento de promises.
+        Se houver um reject, o any esperará pela próxima cuja
+        resultado seja um resolve.
+        Se todas as promises forem reject, retornará um erro no
+        navegador que pode ser capturado e tratado no catch.
+        */
+
+    const p1 = new Promise((resolve, reject) => {
+      setTimeout(() => resolve("P1 resolvida"), 3000);
+    });
+
+    const p2 = new Promise((resolve, reject) => {
+      setTimeout(() => reject("P2 resolvida"), 2000);
+    });
+
+    const p3 = new Promise((resolve, reject) => {
+      setTimeout(() => resolve("P3 resolvida"), 4000);
+    });
+
+    let promises = [p1, p2, p3];
+
+    Promise.any(promises) //promise
+      .then((resolvida) => {
+        console.log(resolvida);
+      })
+      .catch((erro) => {
+        console.log(erro);
+      });
+  </script>
+</html>

@@ -1,0 +1,50 @@
+<html>
+  <body></body>
+  <script>
+    // (??=) faz uma atribuição baseada numa alteração lógica. Seguem abaixo exemplos:
+
+    let v1 = 10;
+    let v2 = null; //nula -> null ou undefined
+
+    /*logical nullish assigment (??=)
+        Se a variável v1 for nula, o valor 50 será atribuído a ela
+        É o que ocorre com a v2   
+    */
+    v1 ??= 50;
+    v2 ??= 100;
+
+    console.log(v1, v2);
+
+    //--------------------------------
+    /*
+    Neste caso, ocorre a criação da informação do ano, 
+    mesmo ela não existindo anteriormente na let carro. 
+    E como seu valor é nulo, recebe '2021'
+    */
+
+    let carro = {
+      marca: "Volkswagen",
+      modelo: "Jetta",
+    };
+    carro.marca ??= "Volkswagen";
+    carro.modelo ??= "T-corss";
+    carro.ano ??= "2021";
+
+    console.log(carro);
+
+    //--------------------------------
+    /*
+    Nesse array de valores aleatórios, percorremos com forEach.
+    Para cada item do array, coletamos seu índice.]
+    Quando não se tem índice, é atribuído o valor '<não informado>'
+    */
+
+    let arr = ["uva", "joão", null, undefined, 5, []];
+
+    arr.forEach((item, indice) => {
+      arr[indice] ??= "<não informado>";
+    });
+
+    console.log(arr);
+  </script>
+</html>
